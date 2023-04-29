@@ -1,0 +1,16 @@
+{
+    "EVERYONEID": "749262663451934820",
+    "TRANSCRIPTSID": "951157248212738120",
+    "everyoneMention": false,
+    "hostedBy": true,
+    "clietnId": "955666857019441152",
+    "OPENTICKET": "950905396078448710",
+    "color":{
+        "GOOD": "#13FF00",
+        "BAD": "#F00909",
+        "CELE": "#00F7EF",
+        "CREMA": "#f7e1bc",
+        "WARNING": "#F7E800",
+        "BLUE": "#1E00F7 "
+    }
+}

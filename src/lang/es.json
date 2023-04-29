@@ -1,0 +1,436 @@
+{
+	"general": {
+		"not-permissions": "🔒 | No tienes permisos para ejecutar este comando.",
+		"channel-text": "⚠️ | Tienes que selecionar un canal de texto.",
+		"economy-create": "⚠️ | Tu economia fue creada, ejecute el comando nuevamente."
+	},
+	"clear": {
+		"clear-number": "{cross} | Selecciona un numero del 1 al 100",
+		"clear-finished": "🗑️ | Se hana eliminado {valor} de mensajes"
+	},
+	"lock": {
+		"lock-channel": "🔒 | El canal fue bloqueado"
+	},
+	"role": {
+		"role-noperms": "🔒 | No tengo permiso para administrar roles por arriba de mi rol",
+		"role-add": "✅ | Rol Añadido a <@{member}>",
+		"role-remove": "✅ | Rol Removido a <@{member}>",
+		"role-mute": "🔇 | Rol de Mute: {mute}"
+	},
+	"setlang": {
+		"newLang": "✅ | Has seleccionado el Español"
+	},
+	"setchannels": {
+		"channel-suggest": "📕 | Canal de Sugerencias: {suggestchannel}",
+		"channel-log": "📕 | Canal de Logs: {logschannel}"
+	},
+	"slowmode": {
+		"slowmode-set": "✅ | En este canal se establecio el slowmode por {duration} segundos",
+		"slowmode-off": "✅ | El slowmode fue desactivado"
+	},
+	"unlock": {
+		"unlock-channel": "🔓 | El canal ha sido desbloqueado"
+	},
+	"welcome": {
+		"on": " | Sistema de Bienvenida Activado",
+		"off": " | Sistema de Bienvenida Desactivado",
+		"menu-title": "👋 | Sistema de Bienvenida | 👋",
+		"menu-description": "Activa/Desactiva tus bienvenida, despues utiliza /welcome",
+		"menu-options": "Selecciona una opcion",
+		"menu-on": "Activa el sistema de bienvenida",
+		"menu-off": "Desactiva el sistema de bienvenida",
+		"not-channel": " | El canal no existe",
+		"not-role": " | El rol no existe",
+		"not-textchannel": " | No es un canal de texto",
+		"not-color": " | El color es invalido, recuerda ponerlo con el #.\nPuesdes revisar estos [Colores](https://htmlcolorcodes.com/es/)",
+		"success-channel": " | Seleccionaste correctamente el canal de bievenida",
+		"success-title": " | Seleccionaste correctamente el titulo",
+		"success-description": " | Seleccionaste correctamente la descripcion",
+		"success-color": " | Seleccionaste correctamente el color",
+		"success-role": "| Seleccionaste correctamente el rol",
+		"write-title": "Escribe el titulo del embed.",
+		"write-description": "Escribe la descripcion del embed.",
+		"write-color": "Escribe el color del embed (HEX).",
+		"write-channel": "Escribe la id del canal.",
+		"write-role": "Escribe la id del rol.",
+		"description": "Bienvenido a la configuracion del **Sistema de Bienvenida**.\nAqui podras armar tu propio embed a tu gusto.  👍\n\nEmpecemos a trabajar! 👷‍♂️",
+		"option-title": "Titulo",
+		"option-description": "Descripcion",
+		"option-color": "Color",
+		"option-channel": "Canal",
+		"option-roleid": "Rol",
+		"title-description": "Escribe el titulo",
+		"description-description": "Escribe la descipcion",
+		"color-description": "Escribe el color (HEX)",
+		"channel-description": "Selecciona el Canal",
+		"roleid-description": "Seleciona el rol"
+	},
+	"8ball": {
+		"8-si": "Si",
+		"8-no": "No",
+		"8-tal": "Tal Vez",
+		"8-nose": "No se",
+		"8-claro": "Claro!",
+		"8-supuesto": "Por Supuesto!",
+		"8-ahora": "Por ahora no!",
+		"8-pregunta": "La pregunta es:",
+		"8-respuesta": "La respuesta es"
+	},
+	"avatar": {
+		"avatar-member": "El avatar de {member} es:",
+		"avatar-you": "Tu avatar es:"
+	},
+	"clima": {
+		"clima-invalid": "⚠️ | | No especificaste una ubicación válida",
+		"clima-title": "☁️ [CLIMA] ☁️\nEstado climático en {city}",
+		"clima-zone": "Zona Horaria",
+		"clima-temp": "Temperatura",
+		"clima-viento": "Viento",
+		"clima-hume": "Humedad",
+		"clima-time": "Fecha"
+	},
+	"dados": {
+		"dados-title": "**🎲[DADOS]🎲** ",
+		"dados-desc": "Te toco: {number}"
+	},
+	"logro": {
+		"logro-min": "⚠️ | El logro debe de contener más de 2 Carácteres.",
+		"logro-max": "⚠️ | El logro solo puede contener hasta 23 Carácteres."
+	},
+	"balance": {
+		"balance-title": "Saldo de {user}",
+		"balance-desc": "**💵 | Billetera:** {cash} {emoji}\n**🏧 | Banco:** {bank} {emoji}\n **💰 | Total:** {total} {emoji}"
+	},
+	"daily": {
+		"daily-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a trabajar.",
+		"daily-recom": "Has recibido **{random}** {emoji} por tu recompensa diaria"
+	},
+	"deposit": {
+		"deposit-all": "Listo! {user} ha guardado **{dinero}** {emoji} en el banco.",
+		"deposit-mas": "⚠️ | No puedes depositar mas dinero del los que dispones",
+		"deposit-invalid": "⚠️ | Ese no es un valor valido",
+		"deposit-finish": "Listo! {user} ha guardado **{cantidad}** {emoji} en el banco.",
+		"deposit-cero": "⚠️ | No puedes depositar 0 o menos"
+	},
+	"give": {
+		"give-wallet": "Listo! Le has ingresado a {usuario}, **{cantidad}** {emoji}.",
+		"give-bank": "Listo! Le has ingresado a {usuario}, **{cantidad}** {emoji}."
+	},
+	"pay": {
+		"pay-you": "⚠️ | No puedes enviarte a ti mismo",
+		"pay-invalid": "⚠️ | No puedes enviarle esa cantidad",
+		"pay-cantidad": "Listo! Has enviado **{cantidad}** {emoji} a {usuario}"
+	},
+	"rest": {
+		"rest-invalid": "⚠️ | Ese no es un valor valido",
+		"rest-wallet": "Listo! Le has retirado a {usuario}, **{cantidad}** {emoji} de la billetera",
+		"rest-bank": "Listo! Le has retirado a {usuario}, **{cantidad}** {emoji} del banco."
+	},
+	"withdraw": {
+		"with-all": "Listo! {user} ha retirado **{banco}** {emoji} del banco",
+		"with-mas": "⚠️ | No puedes retirar mas",
+		"with-invalid": "⚠️ | Ese no es un valor valido",
+		"with-finish": "Listo! {user} ha retirado **{cantidad}** {emoji} del banco",
+		"with-cero": "⚠️ | No puedes depositar 0 o menos"
+	},
+	"beg": {
+		"beg-cooldown": "⚠️ | Necesitas esperar **{remaining}** para mendigar",
+		"beg-men1": "Bien hecho has ganado",
+		"beg-men2": "Rogaste para que te dieran",
+		"beg-men3": "Has pedido limosna y ganaste"
+	},
+	"crime": {
+		"crime-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a robar",
+		"crime-yes": "Has robado y has obtenido **{random}** {emoji}",
+		"crime-no": "Has robado, pero fuiste atrapado por la policia. Te han quitado **{random}** {emoji}"
+	},
+	"postmeme": {
+		"meme-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a postear",
+		"meme-yes": "Has posteado en **{msg}** un meme y tienes **{likes}** Likes!\nTe ingresaron **{profits}** {emoji} en tu cuenta",
+		"meme-no": "Has posteado en **{msg}** un meme y tiene **0** Like!\nSuerte para la proxima publicacion!"
+	},
+	"postvideo": {
+		"video-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a postear",
+		"video-yes": "Has posteado en **{msg}** un video y tienes **{likes}** Views!\nTe ingresaron **{profits}** {emoji} en tu cuenta",
+		"video-no": "Has posteado en **{msg}** un video y tiene **0** View!\nSuerte para la proxima publicacion!"
+	},
+	"robar": {
+		"robar-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a robar",
+		"robar-you": "⚠️ | No puedes robarte a ti mismo",
+		"robar-1000": "⚠️ | No puedes robarle a usuario con menos de **1000** {emoji}",
+		"robar-yes": "Le has robaste a {user} y has obtenido **{moneyRob}** {emoji}",
+		"robar-no": "Te atrapo la Policia por intentar robarle a {user} y has perdido **{moneyRob}** {emoji}"
+	},
+	"work": {
+		"work-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a trabajar",
+		"work-men1": "Trabajaste de Bombero y te pagaron",
+		"work-men2": "Trabajaste de Policia y te pagaron",
+		"work-men3": "Trabajaste de Guardia y te pagaron",
+		"work-men4": "Trabajaste de Streamer y te pagaron",
+		"work-men5": "Trabajaste de Mesero y te pagaron",
+		"work-men6": "Trabajaste de Cocinero y te pagaron",
+		"work-men7": "Trabajaste de Editor y te pagaron",
+		"work-men8": "Trabajaste de Chofer y te pagaron",
+		"work-men9": "Trabajaste de Modelo y te pagaron",
+		"work-men10": "Trabajaste de Mecanico y te pagaron"
+	},
+	"commands": {
+		"commands-info": "Elige una categoria para poder mostrarte los comandos que ofresemos.\n🔧 **Comandos de Configuracion.\n🎮Comandos de Diversion.\n💰 Comandos de Economia.\n📙 Comandos de Informacion.\n🎭 Comandos de Interacciones.\n💎 Comadnos de Juego de Mineria.\n🎵 Comandos de Musica.\n🆙 Comandos de Niveles.\n⚙ Comandos de Setup.\n🎁 Comandos de Sorteos.**",
+		"commands-title": "🤖 | Comandos | 🤖",
+		"title-config": "💎 | Comandos de Configuracion",
+		"title-fun": "💎 | Comandos de Diversion",
+		"title-econo": "💎 | Comandos de Economia",
+		"title-info": "💎 | Comandos de Informacion",
+		"title-inte": "💎 | Comandos de Interacciones",
+		"title-mine": "💎 | Comandos de Juego de Mineria",
+		"title-music": "💎 | Comandos de Musica",
+		"title-level": "💎 | Comandos de Niveles",
+		"title-setup": "💎 | Comandos de Setup",
+		"title-giveaway": "💎 | Comandos de Sorteos",
+		"title-moderation": "💎 | Comandos de Moderacion",
+		"desc-config": "- ** /role add** - Añade roles a los usuarios.\n- ** /role remove** - Quita roles a los usuarios.\n- **/role mute** - Añade para los muteos.\n- **/setcanal** - Establece un canal.\n- **/welcome** - Activar/Desactivar el sistema de bienvenida.",
+		"desc-fun": "- **/8ball** - Has una pregutna y te dara una respuesta.\n - **/avatar** - Muestra tu avatar o el de otro usuario.\n- **/clima** - Te da el clima del lugar que usted quiera.\n- **/dados** - Da un numeros aleatorios.\n- **/logro** - Muestra un logo de minecraft con el texto que quieras.",
+		"desc-eco": "- **/work** - Trabajas y ganas dinero.\n- **/beg** - Mendigas para poder ganar un poco de dinero.\n- **/balance** - Revisas tu billetera y tu cuenta bancaria.\n- **/pay** - Dar dinero a tus amigos.\n- **/daily** - Reclama recompensas diarias.\n- **/robar** - Puedes robarle a otro usuario.\n - **/crime** - Cometes un crimer para ganar dinero.\n - **/deposit** - Depositas dinero en el banco.\n- **/withdraw** - Retirar el dinero del banco.\n - **/give** - Givea dinero a los uaurios.\n- **/rest** - Quita dinero a los usuarios.\n - **/postvideo** - Posteas un video en un red social.\n- **/postmeme** - Postea un meme en un red social.",
+		"desc-info": "- **/commands** - Muestra todos los comandos de Life.\n- **/encuesta** - Realizar encuestas para los usuarios.\n - **/invite** - Invitar el bot a tu servidor.\n- **/roles** - Muestra todos los roles del servidor.\n - **/server** - Da informacion del servidor.\n - **/status** - Estadisticas actuales de Life.\n- **/suggest** - Realizar una sugerincia para el servidor.\n - **/uptime** - Dice el tiempo activo del bot.\n - **/user** - Da inforamcion del usuario.",
+		"desc-inte": "- **/hug** - Dar abrazos a los usuarios.\n - **/kiss** - Darle un beso al usuario.\n - **/happy** - Expresa la felicidad.\n- **/cry** - Expresa la tristesa.\n- **/pat** - Acaricia a un usuario.\n- **/sleep** - Expresa que tiene sueño.\n - **/blush** - Expresa que estas sonrojado.\n - **/bonk** - Recibes un bonkeo.\n- **/confused** - Espresa que estas confuso.\n- **/feed** - Darle de comer a otro usuario.\n- **/dance** - Bailar por la vida.\n- **/slap** - Pegarle una cachetada a un usuario.\n- **/suicide** - Expresar el suicidio.",
+		"desc-mine": "- **/bag** - Muestra todos los items que tienes guardado.\n- **/buy mineria** - Compras items/herramientas en el mercado.\n- **/minar** - Minas con el pico que elijas.\n- **/repair** - Reparas el pico elejido.\n- **/sell** - Vendes los minerales.\n- **/shop mineria** - Revisas el mercado.",
+		"desc-level": "- **/level on** - Activa el sistema de niveles.\n- **/level off** - Desactiva el sistema de niveles.\n- **/leaderboard** - Revisa el ranking de los niveles.\n- **/rank** - Mira tu nivel en el servidor.",
+		"desc-setup": "- **/setup cooldown** - Establecer el cooldown de los trabajos.\n- **/setup currency** - Establecer el emoji de la economia.\n - **/setup payout** - Establecer la ganancia de los trabajos.",
+		"desc-give": "- **/start** - Incia un sorteo.\n- **/reroll** - Elige a otro ganador.",
+		"desc-music": "- **/autoplay** - Musica aleatoria de tu playlist.\n- **/back** - Reproduce la cancion anterior.\n  - **/nowplaying** - Alternar la reproducción automática de la playlist.\n- **/pause** - Pausa la cancion actual.\n- **/play song** - Escucha una cancion.\n - **/queue** - Te muestra la lista de reproducción.\n - **/resume** - Iniciar música en pausa.\n - ** /skip** - Omitir canciones.\n - **/stop** - Detener la musica.\n- **/volume** - Establece el volumen de la musica",
+		"desc-mod": "- **/slowmode** - Establece el modo lento.\n- **/lock** - Bloquea un canal.\n - **/unlock** - Desbloquea un canal.\n- **/clear** - Elimina mensajes.\n- **/ban** - Banear a un usuario.\n- **/unban** - Desbanear a un usuario.\n- **/kick** - Kickear a un usuario.\n- **/warn add** - Añadir una advertencia a un usuario.\n- **/warn check** - Revisar las advertencia a un usuario.\n- **/warn remove** - Quitar una advertencia a un usuario.\n- **/warn clear** - Eliminar todas las advertencia a un usuario."
+	},
+	"encuesta": {
+		"encuesta-title": "**🔍 | Encuesta | 🔍**",
+		"encuesta-finish": "✅ | Encuesta enviada con exito"
+	},
+	"help": {
+		"help-title": "💎 | Life Ayuda | 💎",
+		"help-desc": "Life, es un bot multifuncional y con comandos innovadores.\n\n**📌 Comandos**\nEs tan facil como escribir /commands (categoria).\n\n**📌 Servidor Soporte**\nPodes entrar al server haciendo [Click Aqui](https://discord.gg/YdftcbREXF)\n\n**📌 Vota a Life**\nPuedes hacerlo haciendo [Click Aqui](https://top.gg/bot/854079049193095180/vote)"
+	},
+	"invite": {
+		"invite-title": "💎 | Invitacion de Life | 💎"
+	},
+	"roles": {
+		"roles-title": "🔵 | Lista de roles | 🔵"
+	},
+	"server-info": {
+		"owner": "💎 Dueño del Servidor:",
+		"id": "🆔 ID:",
+		"name": "💫 Nombre:",
+		"members": "👪 Miembros:",
+		"rol": "📌 Roles:",
+		"channel": "🔈 Canales:",
+		"emoji": "🎭 Emojis:",
+		"boost": "🎉 Boost:",
+		"verif": "✅ Nivel de verificación:"
+	},
+	"status": {
+		"status-wait": "💡 | Obteniendo estado...",
+		"status-title": "Estado de: {user}",
+		"status-ren": "🔩 Rendimiento",
+		"status-sis": "💻 Sistema",
+		"status-proce": "Procesador",
+		"status-ope": "💻 Sistema Operativo",
+		"status-user": "👪 Usuarios",
+		"status-emoji": "🎭 Emojis",
+		"status-server": "📺 Servidores",
+		"status-host": "🕐 Tiempo de actividad del host",
+		"status-bot": "🕐 Tiempo de actividad del bot",
+		"status-start": "🛑 Último Inicio"
+	},
+	"suggest": {
+		"suggest-channel": "⚠️ | No se encontro ningun canal estableciodo, usa /setchannel suggest",
+		"suggest-author": "{user}",
+		"suggest-desc": "**Sugerencia:**\n {sugerencia}",
+		"suggest-finish": "✅ | Sugerencia Enviada"
+	},
+	"uptime": {
+		"uptime-desc": "⏲️ | **Tiempo de Encendido** | ⏲️\n\n  {days} Dias  {hours} Horas  {minutes} Minutos  {seconds} Segundos",
+		"uptime-footer": "Tengo sueño!"
+	},
+	"userinfo": {
+		"title": "Informacion de {user}",
+		"name": "💎 Nombre del Usuario",
+		"id": "🆔 ID",
+		"ping": "💻 Ping",
+		"cuenta": "📌 Cuando creo su cuenta",
+		"server": "📌 Cuando se unio al servidor"
+	},
+	"interaciones": {
+		"footer": "Comando solicitado por {user}",
+		"blush": " se ha sonrojado ",
+		"bonk": " recibio un bonk de ",
+		"confused": " se encuentra confundido ",
+		"cry": " esta muy triste ",
+		"dance": " esta bailando de la felicidad ",
+		"feed": " le dio de comer a ",
+		"happy": " se encuentra muy feliz! ",
+		"hug": " le dio un abrazo a ",
+		"pat": " ha acariciado a ",
+		"slap": " le ha pegado una cachetada a ",
+		"sleep": " se ha quedado dormido ",
+		"suicide": " se ha suicidado, la comunidad esta triste ",
+		"kiss": "le da un beso a "
+	},
+	"bag": {
+		"bag-title": "Mochila de {user}",
+		"bag-desc": "**Minerales**  {items}/{capacidad}\n{mpiedra} **Piedra:** {piedra} (1)\n{mcarbon} **Carbon:** {carbon} (2)\n{mhierro} **Hierro:** {hierro} (5)\n{moro} **Oro:** {oro} (8)\n{mredstone} **Redstone:** {redstone} (10)\n{mlapis} **Lapis:** {lapis} (10)\n{mobsidian} **Obsidiana:** {obsidiana} (20)\n{mdiamante} **Diamante:** {diamante} (25)\n{mesmeralda} **Esmeralda:** {esmeralda} (30)\n\n**Tus Picos**",
+		"bag-dura": "Durabilidad"
+	},
+	"buy": {
+		"buy-invalid": "⚠️ | No tienes los items o dinero suficiente.",
+		"true-piedra": "⚠️ | Ya posees un pico de piedra",
+		"true-hierro": "⚠️ | Ya posees un pico de hierro",
+		"true-oro": "⚠️ | Ya posees un pico de oro",
+		"true-diamante": "⚠️ | Ya posees un pico de diamante",
+		"true-netherite": "⚠️ | Ya posees un pico de netherite",
+		"finish-piedra": "✅ | Has comprado un pico piedra, ya puedes utilizar /minar piedra.",
+		"finish-hierro": "✅ | Has comprado un pico hierro, ya puedes utilizar /minar hierro.",
+		"finish-oro": "✅ | Has comprado un pico oro, ya puedes utilizar /minar oro.",
+		"finish-diamante": "✅ | Has comprado un pico diamante, ya puedes utilizar /minar diamante.",
+		"finish-netherite": "✅ | Has comprado un pico netherite, ya puedes utilizar /minar netherite.",
+		"buy-no": "⚠️ | No tengo ese item en venta, verifica con /shop"
+	},
+	"minar": {
+		"minar-cooldown": "⚠️ | Necesitas esperar **{remaining}** para volver a minar",
+		"minar": "Bien hecho {user} has ido a minar y encontraste",
+		"mmadera": "\n\n**Pico Madera:**",
+		"mpiedra": "\n\n**Pico Piedra:**",
+		"mhierro": "\n**Pico Hierro:**",
+		"moro": "\n**Pico Oro:**",
+		"mdiamante": "\n**Pico Diamante:**",
+		"mnetherite": "\n**Pico Netherite:**",
+		"durabi": "➤ Durabilidad",
+		"repair": "⚠️ | Tienes que reparar tu pico con /repair",
+		"no-pico": "⚠️ | No tienes ese pico, compralo en /shop",
+		"espacio": "⚠️ | No tienes suficiente espacio en tu mochila"
+	},
+	"repair": {
+		"vmadera": "⚠️ | No tienes suficiente dinero, repararlo vale 1000 {emoji}",
+		"vpiedra": "⚠️ | No tienes suficiente dinero, repararlo vale 1500 {emoji}",
+		"vhierro": "⚠️ | No tienes suficiente dinero, repararlo vale 2000 {emoji}",
+		"voro": "⚠️ | No tienes suficiente dinero, repararlo vale 2500 {emoji}",
+		"vdiamante": "⚠️ | No tienes suficiente dinero, repararlo vale 3000 {emoji}",
+		"vnetherite": "⚠️ | No tienes suficiente dinero, repararlo vale 4000 {emoji}",
+		"rmadera": "✅ | Has reparado tu pico, te salio **1000 {emoji}**, Durabilidad **500/500**",
+		"rpiedra": "✅ | Has reparado tu pico, te salio **2000 {emoji}**, Durabilidad **1000/1000**",
+		"rhierro": "✅ | Has reparado tu pico, te salio **2000 {emoji}**, Durabilidad **1700/1700**",
+		"roro": "✅ | Has reparado tu pico, te salio **2500 {emoji}**, Durabilidad **2300/2300**",
+		"rdiamante": "✅ | Has reparado tu pico, te salio **3000 {emoji}**, Durabilidad **2700/2700**",
+		"rnetherite": "✅ | Has reparado tu pico, te salio **4000 {emoji}**, Durabilidad **3200/3200**",
+		"dmadera": "⚠️ | Tu pico tiene una durabilidad de **{duram}/500**",
+		"dpiedra": "⚠️ | Tu pico tiene una durabilidad de **{durap}/1000**",
+		"dhierro": "⚠️ | Tu pico tiene una durabilidad de **{durah}/1700**",
+		"doro": "⚠️ | Tu pico tiene una durabilidad de **{durao}/2300**",
+		"ddiamante": "⚠️ | Tu pico tiene una durabilidad de **{durad}/2700**",
+		"dnetherite": "⚠️ | Tu pico tiene una durabilidad de **{duran}/3200**",
+		"no-pico": "⚠️ | Ese pico no existe"
+	},
+	"sell": {
+		"gpiedra": "✅ | Has vendido {cantidad} de Piedra. Ganaste {pcan} {emoji}",
+		"gcarbon": "✅ | Has vendido {cantidad} de Carbon. Ganaste {ccan} {emoji}",
+		"ghierro": "✅ | Has vendido {cantidad} de Hierro. Ganaste {hcan} {emoji}",
+		"goro": "✅ | Has vendido {cantidad} de Oro. Ganaste {ocan} {emoji}",
+		"gredstone": "✅ | Has vendido {cantidad} de Redstone. Ganaste {rcan} {emoji}",
+		"glapis": "✅ | Has vendido {cantidad} de Lapis. Ganaste {lcan} {emoji}",
+		"gobsidiana": "✅ | Has vendido {cantidad} de Obsidiana. Ganaste {obcan} {emoji}",
+		"gdiamante": "✅ | Has vendido {cantidad} de Diamante. Ganaste {dcan} {emoji}",
+		"gesmeralda": "✅ | Has vendido {cantidad} de Esmeralda. Ganaste {ecan} {emoji}",
+		"min": "⚠️ | No tienes tanto minerales para vender."
+	},
+	"shop": {
+		"shop-desc": "\n**Picos**\n\n{pstone} **Precio:** 6500 y {mpiedra} 600\n{piron} **Precio:** 8000 y {mhierro} 800\n{pgold} **Precio:** 7500 y {moro} 700\n{pemoji} **Precio:** 10000 y {mdiamante} 900\n{pnetherite} **Precio:** 15000 y {mesmeralda} 900"
+	},
+	"ban": {
+		"no-details": "⚠️ | No se pueden obtener detalles relacionados con un miembro dado",
+		"no-user": "⚠️ | No puedo prohibir a esta miembro",
+		"no-rol": "⚠️ | Dado que el miembro tiene un rango superior o igual al suyo, no puedo prohibirlo",
+		"finish": "✅ | **{member}** fue baneado por {reason}"
+	},
+	"unban": {
+		"no-bans": "⚠️ | No puedo desbanear a un usuario que no esta ban",
+		"no-user": "⚠️ | No puedo desbanear a esta miembro",
+		"finish": "✅ | **{member}** fue desbaneado del servidor"
+	},
+	"warn": {
+		"title": "⚠️ | Sistema de Advertencia | ⚠️",
+		"no-warn": "⚠️ | {usern} no tiene advertencias",
+		"add-desc": "**Nombre:** {usern}\n**ID:** {useri}\n**Razon:** {razon}",
+		"check-title": "⚠️ | {usern} de Advertencias  | ⚠️",
+		"check-desc": "**ID:** {i}\n**Por:** {wE}\n**Razon:** {wR}\n\n",
+		"remove-desc": "**Id de advertencia de {usern}:** {warnid} ha sido removido.",
+		"clear-desc": "✅ | Se limpiaron las advertencias de {usern}."
+	},
+	"kick": {
+		"no-details": "⚠️ | No se pueden obtener detalles relacionados con un miembro dado",
+		"no-user": "⚠️ | No puedo expulsar a esta miembro",
+		"no-rol": "⚠️ | Dado que el miembro tiene un rango superior o igual al suyo, no puedo prohibirlo",
+		"finish": "✅ | **{member}** fue kickedo por {reason}"
+	},
+	"leaderboard": {
+		"no-leader": "⚠️ | Todavia no hay nadie en la clasificacion"
+	},
+	"level": {
+		"menu-title": " | Sistema de Niveles | ",
+		"menu-description": "Activa/Desactiva el sistema de niveles.",
+		"menu-option": "Selecciona una opcion",
+		"menu-on": "Activa el sistema de niveles",
+		"menu-off": "Desactiva el sistema de niveles",
+		"on": " | Sistema de Niveles Activado.",
+		"off": " | Sistema de Niveles Desactivado."
+	},
+	"rank": {
+		"no-xp": "⚠️ | Parece que este usuario no ha ganado xp hasta ahora",
+		"no-xp-you": "⚠️ | Parece que no has ganado xp hasta ahora.",
+		"level-user": " | Su nivel actual es **{member}**",
+		"level-you": " | **{user}** tu nivel actual es **{member}**"
+	},
+	"setup": {
+		"currency-finish": "✅ | Se establecio un nuevo emoji para la economia: {currency}",
+		"payout-finish": "✅ | Se establecio el minimo {min} y el maximo {max} que podran generar",
+		"cooldown-finish": "✅ | Se establecio el cooldown del trabajo: {tiempo} minutos"
+	},
+	"music": {
+		"not-music": "⚠️ | No hay música reproduciéndose actualmente",
+		"invalid": "⚠️ | Algo salió mal",
+		"autoplay-on": "✅ | Autoplay está activado. Ahora voy a activar música aleatoria",
+		"autoplay-off": "✅ | Autoplay está desactivado ahora",
+		"back-yes": "Reproduciendo **{queue} {song}**",
+		"back-no": "⚠️ | No hay canción anterior",
+		"now-playing": "> Audio `%{queue}`\n> Duracion: `{dura}`\n> URL: **{url}**\n> Por: <@${user}>",
+		"now-save": "Guardar lista de reproducción",
+		"pause": "**{name}** - Música en pausa",
+		"not-song": "⚠️ | No se encontraron resultados",
+		"load-song": "Cargando música(s)... 🎧",
+		"queue-not": "⚠️ | La cola está vacía",
+		"queue-title": "Lista de Música del Servidor - {guild}",
+		"queue-desc1": "Reproduciendo actualmente:",
+		"queue-desc2": "(Solicitado por",
+		"page": "Página",
+		"queue-close": "⚠️ | El procesador de comandos ha sido cancelado",
+		"queue-title1": "Lista de Música del Servidor - ¡Se acabó el tiempo!",
+		"queue-desc3": "⚠️ | Tu tiempo ha expirado para usar este comando, puedes escribir `/queue` para usar el comando de nuevo",
+		"resume-not": "⚠️ | No hay música pausada",
+		"resume-yes": "**{name}**, ¡Canción reanudada!",
+		"resume-error": "⚠️ | Algo salió mal. Parece que no has detenido la música antes",
+		"skip-number": "⚠️ | El número que ingresaste es mayor que la cantidad de canciones en la cola",
+		"skip-number1": "⚠️ | Por favor escribe un número válido",
+		"skip-yes": "**{name}**, Cancion Omitida",
+		"skip-error": "**{name}**, No puedes tener más de 30 listas de reproducción",
+		"stop": "✅ | La música ha sido detenida. ¡Hasta la próxima!",
+		"volume-now": "Volumen actual: **{volume}** \n**Para cambiar el volumen, con `1` a `{maxVol}` Ingresa un número entre.",
+		"volume-error": "⚠️ | El volumen que deseas cambiar ya es el volumen actual",
+		"volume-error1": "⚠️ | **Ingresa un número de `1` a `{maxVol}` para cambiar el volumen**",
+		"volume-yes": "✅ | Volumen cambiado: **{vol}**/**{maxVol}**"
+	},
+	"twitch": {
+		"menu-title": " | Notificaciones de Twitch | ",
+		"menu-description": "Activa/Desactiva el sistema de notificaciones de twitch.",
+		"menu-option": "Selecciona una opcion",
+		"menu-on": "Activa el sistema de notificaciones de twitch",
+		"menu-off": "Desactiva el sistema de notificaciones de twitch",
+		"on": " | Notificaciones de Twitch Activado.",
+		"off": " | Notificaciones Twitch Desactivado."
+	}
+}
