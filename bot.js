@@ -82,16 +82,14 @@ client.on("messageCreate", async message => {
 })
 
 //SORTEOS
-const {
-	GiveawaysManager
-} = require('discord-giveaways');
+const { GiveawaysManager } = require("discord-giveaways");
 client.giveawaysManager = new GiveawaysManager(client, {
-	storage: "giveaways.json",
-	default: {
-		botsCanWin: false,
-		embedColor: "#FF0000",
-		reaction: "🎉"
-	}
+  storage: "./Database/giveaways.json",
+  default: {
+    botsCanWin: false,
+    embedColor: Config.color.CELE,
+    reaction: "🎉",
+  }
 });
 
 //LANGUAGES
@@ -129,8 +127,8 @@ const { SoundCloudPlugin } = require("@distube/soundcloud");
 const { DeezerPlugin } = require("@distube/deezer");
 const { YtDlpPlugin } = require("@distube/yt-dlp");
 client.player = new DisTube(client, {
-  leaveOnStop: false,
-  leaveOnFinish: false,
+  leaveOnStop: true,
+  leaveOnFinish: true,
   emitNewSongOnly: true,
   emitAddSongWhenCreatingQueue: false,
   emitAddListWhenCreatingQueue: false,

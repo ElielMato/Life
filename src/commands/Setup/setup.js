@@ -526,9 +526,9 @@ module.exports = {
                     components: [row],
                 })
             } else if (interaction.options.getSubcommand() === "twitch") {
-                const Welcome = require('../../models/welcome')
-                const welcome = await Welcome.findOne({ GuildId: interaction.guild.id})
-                if (!welcome) return await Welcome.create({
+                const Twitch = require('../../models/twitch')
+                const twitchModel = await Twitch.findOne({ GuildId: interaction.guild.id})
+                if (!twitchModel) return await Twitch.create({
                     GuildId: interaction.guild.id
                 });
 

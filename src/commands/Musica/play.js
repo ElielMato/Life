@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { EmbedBuilder, PermissionsBitField } = require("discord.js");
-const Config = require("./../../..//config.json");
+const Config = require("../../../config.json");
 
 const builder = new SlashCommandBuilder()
   .setName("play")
@@ -9,39 +9,27 @@ const builder = new SlashCommandBuilder()
     "es-ES": "Escucha una cancion",
     "en-US": "Listen to a song"
   })
-  .addSubcommand((subcommand) =>
-    subcommand
+  .addStringOption((option) =>
+    option
       .setName("cancion")
       .setNameLocalizations({
         "es-ES": "cancion",
         "en-US": "song",
       })
-      .setDescription("Escucha una cancion")
+      .setDescription("Elige el nombre de tu cancion")
       .setDescriptionLocalizations({
-        "es-ES": "Escucha una cancion",
-        "en-US": "Listen to a song",
+        "es-ES": "Elige el nombre de tu cancion",
+        "en-US": "Choose the name of your song",
       })
-      .addStringOption((option) =>
-        option
-          .setName("nombre")
-          .setNameLocalizations({
-            "es-ES": "nombre",
-            "en-US": "name",
-          })
-          .setDescription("Elige el nombre de tu cancion")
-          .setDescriptionLocalizations({
-            "es-ES": "Elige el nombre de tu cancion",
-            "en-US": "Choose the name of your song",
-          })
-          .setRequired(true)))
+      .setRequired(true))
 
 module.exports = {
   builder: builder.toJSON(),
   name: "play",
   async run(client, interaction, language) {
     try {
-      if (interaction.options.getSubcommand() === "cancion") {
-        const name = interaction.options.getString("nombre");
+        const name = interaction.options.getString("cancion");
+
         if (!name) {
           const embed= new EmbedBuilder()
                 .setColor(Config.color.WARNING)
@@ -53,6 +41,7 @@ module.exports = {
                 .setColor(Config.color.CELE)
                 .setDescription(client.languages.__({phrase: 'music.load-song', locale: language}))
         await interaction.reply({ embeds: [embed1], ephemeral: true }).catch((e) => {});
+
         try {
           await client.player.play(interaction.member.voice.channel, name, {
             member: interaction.member,
@@ -65,7 +54,6 @@ module.exports = {
                 .setDescription(client.languages.__({phrase: 'music.load-song', locale: language}))
         await interaction.reply({ embeds: [embed1], ephemeral: true }).catch((e) => {});
         }
-      }
     } catch (e) {
       console.error(e);
     }

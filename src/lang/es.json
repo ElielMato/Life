@@ -431,6 +431,26 @@
 		"menu-on": "Activa el sistema de notificaciones de twitch",
 		"menu-off": "Desactiva el sistema de notificaciones de twitch",
 		"on": " | Notificaciones de Twitch Activado.",
-		"off": " | Notificaciones Twitch Desactivado."
+		"off": " | Notificaciones Twitch Desactivado.",
+		"add": " | El streamer {userName} ha sido agregado para las notificaciones de Twitch.",
+		"notremove": " | No hay streamers para eliminar en este servidor.",
+		"remove": " | El streamer {userName} ha sido eliminado para las notificaciones de Twitch.",
+		"user": " | {userName} no está en la lista de notificaciones de Twitch.",
+		"channel": " | Canal establecido para las Notificaciones de Twitch"
+	},
+	"giveaway": {
+		"drawing": " Termina en: **{timestamp}**",
+		"participate": " Reacciona 🎉 para participar!",
+		"hosted": " Hecho por: <@{user}>",
+		"winner": " Ganador/es",
+		"noWinner": " No participo nadie en el sorteo, no hay ganadores",
+		"winMenssage": "🎉 | Felicidades, {winners} fue el ganador de **{this.prize}**!!",
+		"end": "Termino el Sorteo",
+		"footer": "Suerte, espero que ganes!!",
+		"congrat": "🎉 | Nuevo Ganador/es: Felicidades, {winners} fue el ganador de **{this.prize}**!!",
+		"error": "🎉 | No participo nadie mas en el sorteo, no hay nuevo ganadores",
+		"notEnd": " | El sorteo todavia no termina",
+		"notExist": " | No existe ese sorteo",
+		"rerrol": " | Elegiste nuevamente los ganadores"
 	}
 }

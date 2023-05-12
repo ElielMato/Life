@@ -433,6 +433,26 @@
 		"menu-on": "Enable the twitch notification system",
 		"menu-off": "Disable the twitch notification system",
 		"on": " | Twitch Notifications Enabled.",
-		"off": " | Twitch Notifications Disabled."
+		"off": " | Twitch Notifications Disabled.",
+		"add": " | The streamer {userName} has been added to Twitch notifications.",
+		"notremove": " | There are no streamers to delete on this server.",
+		"remove": " | The streamer {userName} has been deleted for Twitch notifications.",
+		"user": " | {userName} is not in the Twitch notification list.",
+		"channel": " | Channel established for Twitch Notifications"
+	},
+	"giveaway": {
+		"drawing": " Ends in: **{timestamp}**",
+		"participate": " React 🎉 to participate!",
+		"hosted": " Hosted By: <@{user}>",
+		"winner": " Winner/s",
+		"noWinner": " No one participated in the draw, there are no winners",
+		"winMenssage": "🎉 | Congratulations, {winners} was the winner of **{this.prize}**!!",
+		"end": "Giveaway Finish",
+		"footer": "Good Luck!!",
+		"congrat": "🎉 | New Winner/s: Congratulations, {winners} was the winner of **{this.prize}**!!",
+		"error": "🎉 | No one else participated in the draw, there are no new winners",
+		"notEnd": " | The giveaway is not over yet",
+		"notExist": " | There is no such giveaway",
+		"rerrol": " | You chose the winners again"
 	}
 }

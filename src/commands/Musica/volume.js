@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder, PermissionsBitField } = require("discord.js");
-const Config = require('./../../..//config.json');
+const Config = require('../../../config.json');
 
 const builder = new SlashCommandBuilder()
     .setName('volume')

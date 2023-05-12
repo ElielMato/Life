@@ -10,6 +10,7 @@ const {
 } = require("discord.js");
 const Config = require('./../../..//config.json')
 const Twitch = require('../../models/twitch')
+const Emoji = require('../../json/emoji.json')
 
 const builder = new SlashCommandBuilder()
     .setName('twitch')
@@ -73,7 +74,7 @@ const builder = new SlashCommandBuilder()
             'es-ES': "canal",
             "en-US": "channel"
         })
-        .setDescription('Elije un canal de notificaciones')
+        .setDescription('Elige un canal de notificaciones')
         .setDescriptionLocalizations({
             'es-ES': "Quita usuario de twitch para las notificaciones",
             "en-US": "Choose a notification channel"
@@ -84,9 +85,9 @@ const builder = new SlashCommandBuilder()
                 'es-ES': "canal",
                 "en-US": "channel"
             })
-            .setDescription('Elije un canal')
+            .setDescription('Elige un canal')
                 .setDescriptionLocalizations({
-                'es-ES': "Elije un canal",
+                'es-ES': "Elige un canal",
                 "en-US": "Choose a channel"
                 })
             .addChannelTypes(ChannelType.GuildText)
@@ -99,6 +100,8 @@ module.exports = {
     async run(client, interaction, language) {
 
         try {
+            const check = client.emojis.cache.get(Emoji.check)
+            const cross = client.emojis.cache.get(Emoji.cross)
 
             var permisos = interaction.member.permissions.has(PermissionsBitField.Flags.Administrator);
             const embedPerms = new EmbedBuilder()
@@ -131,9 +134,17 @@ module.exports = {
                     await guildTwitch.save();
                 }
 
-                
+                const embedAdd = new EmbedBuilder()
+                    .setDescription(`${check}` + client.languages.__mf({
+                        phrase: 'twitch.add',
+                        locale: language
+                    }, {userName: userName}))
+                    .setColor(Config.color.GOOD)
 
-                interaction.reply(`El streamer ${userName} ha sido agregado para las notificaciones de Twitch.`);
+                interaction.reply({
+                    embeds: [embedAdd],
+                    ephemeral: true
+                })
 
             } else if (interaction.options.getSubcommand() === "remove") {
 
@@ -143,15 +154,46 @@ module.exports = {
                 });
 
                 if (!guildTwitch) {
-                    interaction.reply('No hay streamers para eliminar en este servidor.');
+                    const embedNot = new EmbedBuilder()
+                        .setDescription(`${cross}` + client.languages.__({
+                            phrase: 'twitch.notremove',
+                            locale: language
+                        }))
+                        .setColor(Config.color.BAD)
+
+                    interaction.reply({
+                        embeds: [embedNot],
+                        ephemeral: true
+                    })
                     return;
                 } else {
                     if (guildTwitch.UserTwitch.includes(userName)) {
                         guildTwitch.UserTwitch = guildTwitch.UserTwitch.filter(name => name !== userName);
-                        interaction.reply(`El streamer ${userName} ha sido eliminado para las notificaciones de Twitch.`);
+                        const embedRemove = new EmbedBuilder()
+                            .setDescription(`${check}` + client.languages.__mf({
+                                phrase: 'twitch.remove',
+                                locale: language
+                            }, {userName: userName}))
+                            .setColor(Config.color.GOOD)
+
+                        interaction.reply({
+                            embeds: [embedRemove],
+                            ephemeral: true
+                        })
                         await guildTwitch.save();
                     } else {
-                        interaction.reply(`${userName} no está en la lista de notificaciones de Twitch.`);
+                        const embedUser = new EmbedBuilder()
+                            .setDescription(`${cross}` + client.languages.__mf({
+                                phrase: 'twitch.user',
+                                locale: language
+                            }, {userName: userName}))
+                            .setColor(Config.color.BAD)
+
+                        interaction.reply({
+                            embeds: [embedUser],
+                            ephemeral: true
+                        })
+                        interaction.reply(``);
                     } 
                 }
 
@@ -169,7 +211,17 @@ module.exports = {
                     });
                 } else {
                     await guildTwitch.updateOne({ChannelId: channel.id})
-                    interaction.reply("Canal establecido")
+                    const embedChannel = new EmbedBuilder()
+                        .setDescription(`${check}` + client.languages.__({
+                            phrase: 'twitch.channel',
+                            locale: language
+                        }))
+                        .setColor(Config.color.GOOD)
+
+                    interaction.reply({
+                        embeds: [embedChannel],
+                        ephemeral: true
+                    })
                 }
             }
 
