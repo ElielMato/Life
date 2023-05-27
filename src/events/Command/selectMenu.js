@@ -10,7 +10,7 @@ const Welcome = require('../../models/welcome')
 const Emoji = require('../../json/emoji.json');
 const Level = require('../../models/levels');
 const Langs = require('../../models/guilds')
-const Twitch = require('../../models/twitch')
+// const Twitch = require('../../models/twitch')
 
 module.exports = {
     name: 'interactionCreate',
@@ -161,22 +161,22 @@ module.exports = {
                     ephemeral: true
                 })
                 break;
-            case 'onTwitch':
-                const twitchOn = await Twitch.findOne({GuildId: interaction.guild.id})
-                await twitchOn.updateOne({Active: "on"})
-                interaction.reply({
-                    embeds: [embed.setDescription(`${check}`  + client.languages.__({phrase: 'twitch.on', locale: language}))],
-                    ephemeral: true
-                })
-                break;
-            case 'offTwitch':
-                const twitchOff = await Twitch.findOne({GuildId: interaction.guild.id})
-                await twitchOff.updateOne({Active: "off"})
-                interaction.reply({
-                    embeds: [embedError.setDescription(`${cross}`  + client.languages.__({phrase: 'twitch.off', locale: language}))],
-                    ephemeral: true
-                })
-                break;
+            // case 'onTwitch':
+            //     const twitchOn = await Twitch.findOne({GuildId: interaction.guild.id})
+            //     await twitchOn.updateOne({Active: "on"})
+            //     interaction.reply({
+            //         embeds: [embed.setDescription(`${check}`  + client.languages.__({phrase: 'twitch.on', locale: language}))],
+            //         ephemeral: true
+            //     })
+            //     break;
+            // case 'offTwitch':
+            //     const twitchOff = await Twitch.findOne({GuildId: interaction.guild.id})
+            //     await twitchOff.updateOne({Active: "off"})
+            //     interaction.reply({
+            //         embeds: [embedError.setDescription(`${cross}`  + client.languages.__({phrase: 'twitch.off', locale: language}))],
+            //         ephemeral: true
+            //     })
+            //     break;
             
         }
     }

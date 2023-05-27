@@ -131,14 +131,14 @@ const builder = new SlashCommandBuilder()
             "es-ES": "Activas/Desactivar el sistema de niveles",
             "en-US": "Enable/Disable the levels system"
         }))
-    .addSubcommand(subcommand =>
-        subcommand
-        .setName('twitch')
-        .setDescription('Activas/Desactivar el sistema de notificaciones de twitch')
-        .setDescriptionLocalizations({
-            "es-ES": "Activas/Desactivar el sistema de notificaciones de twitch",
-            "en-US": "Enable/Disable the twitch notification system"
-        }))
+    // .addSubcommand(subcommand =>
+    //     subcommand
+    //     .setName('twitch')
+    //     .setDescription('Activas/Desactivar el sistema de notificaciones de twitch')
+    //     .setDescriptionLocalizations({
+    //         "es-ES": "Activas/Desactivar el sistema de notificaciones de twitch",
+    //         "en-US": "Enable/Disable the twitch notification system"
+    //     }))
 
 module.exports = {
     builder: builder.toJSON(),
@@ -525,41 +525,41 @@ module.exports = {
                     embeds: [embed],
                     components: [row],
                 })
-            } else if (interaction.options.getSubcommand() === "twitch") {
-                const Twitch = require('../../models/twitch')
-                const twitchModel = await Twitch.findOne({ GuildId: interaction.guild.id})
-                if (!twitchModel) return await Twitch.create({
-                    GuildId: interaction.guild.id
-                });
+            } //else if (interaction.options.getSubcommand() === "twitch") {
+            //     const Twitch = require('../../models/twitch')
+            //     const twitchModel = await Twitch.findOne({ GuildId: interaction.guild.id})
+            //     if (!twitchModel) return await Twitch.create({
+            //         GuildId: interaction.guild.id
+            //     });
 
-                const embed = new EmbedBuilder()
-                    .setTitle(`${twitch}` + client.languages.__({phrase: 'twitch.menu-title', locale: language}) + `${twitch}`)
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: 'twitch.menu-description', locale: language}))
+            //     const embed = new EmbedBuilder()
+            //         .setTitle(`${twitch}` + client.languages.__({phrase: 'twitch.menu-title', locale: language}) + `${twitch}`)
+            //         .setColor(Config.color.CELE)
+            //         .setDescription(client.languages.__({phrase: 'twitch.menu-description', locale: language}))
 
-                const menuLevels = new StringSelectMenuBuilder()
-                    .setCustomId('activeTwitch')
-                    .setPlaceholder(client.languages.__({phrase: 'twitch.menu-option', locale: language}))
-                    .addOptions(
-                        {
-                            label: "On",
-                            description: client.languages.__({phrase: 'twitch.menu-on', locale: language}),
-                            value: "onTwitch"
-                        },
-                        {
-                            label: "Off",
-                            description: client.languages.__({phrase: 'twitch.menu-off', locale: language}),
-                            value: "offTwitch"
-                        }, );
+            //     const menuLevels = new StringSelectMenuBuilder()
+            //         .setCustomId('activeTwitch')
+            //         .setPlaceholder(client.languages.__({phrase: 'twitch.menu-option', locale: language}))
+            //         .addOptions(
+            //             {
+            //                 label: "On",
+            //                 description: client.languages.__({phrase: 'twitch.menu-on', locale: language}),
+            //                 value: "onTwitch"
+            //             },
+            //             {
+            //                 label: "Off",
+            //                 description: client.languages.__({phrase: 'twitch.menu-off', locale: language}),
+            //                 value: "offTwitch"
+            //             }, );
             
                 
-                const row = new ActionRowBuilder().addComponents(menuLevels);
+            //     const row = new ActionRowBuilder().addComponents(menuLevels);
 
-                interaction.reply({
-                    embeds: [embed],
-                    components: [row],
-                })
-            }
+            //     interaction.reply({
+            //         embeds: [embed],
+            //         components: [row],
+            //     })
+            // }
 
         } catch (error) {
             console.log("Error en SlashCommand:" + error);
