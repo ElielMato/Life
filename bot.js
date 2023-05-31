@@ -140,4 +140,36 @@ client.player = new DisTube(client, {
   ],
 });
 
+//REMINDER
+const reminderSchema = require('./src/models/reminder.schema.js')
+
+setInterval(async () => {
+
+	const reminders = await reminderSchema.find();
+
+	if (!reminders) return;
+	else {
+		reminders.forEach(async reminder => {
+
+			if (reminder.Time > Date.now()) return;
+
+			const user = await client.users.cache.get(reminder.User);
+			const embedReminder = new EmbedBuilder()
+				.setTitle("⏰ | Reminder | ⏰")
+				.setDescription(reminder.Message)
+				.setColor(Config.color.CELE)
+				.setTimestamp()
+			user?.send({ embeds: [embedReminder] }).catch(err => {return});
+
+			await reminderSchema.deleteMany({
+				User: user.id,
+				Time: reminder.Time,
+				Message: reminder.Message
+			});
+		});
+	};
+}, 1000 * 5)
+
+
+
 client.login(process.env.TOKEN)

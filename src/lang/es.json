@@ -452,5 +452,9 @@
 		"notEnd": " | El sorteo todavia no termina",
 		"notExist": " | No existe ese sorteo",
 		"rerrol": " | Elegiste nuevamente los ganadores"
+	},
+	"reminder": {
+		"not": "⚠️ | Ya tienes una recordatorio activo",
+		"finish": " | Tu nuevo recordatorio estara en <t:{time}:R>"
 	}
 }

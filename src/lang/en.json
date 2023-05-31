@@ -454,5 +454,9 @@
 		"notEnd": " | The giveaway is not over yet",
 		"notExist": " | There is no such giveaway",
 		"rerrol": " | You chose the winners again"
+	},
+	"reminder": {
+		"not": "⚠️ | You already have an active reminder",
+		"finish": " | Your new reminder will be <t:{time}:R>"
 	}
 }
