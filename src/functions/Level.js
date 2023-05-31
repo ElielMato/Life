@@ -10,12 +10,14 @@ module.exports = {
 
         const star = client.emojis.cache.get(Emoji.starLevel)
 
-        const ServerLevel = await Levels.find({
-            GuildId: message.guild.id,
-            UserId: message.author.id
-        })
+        
 
         if (message.author.bot === false) {
+            const ServerLevel = await Levels.find({
+                GuildId: message.guild.id,
+                UserId: message.author.id
+            })
+            
             if (ServerLevel[0].Active == "on") {
                 if (!ServerLevel) {
 
