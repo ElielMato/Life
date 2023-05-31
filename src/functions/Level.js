@@ -10,15 +10,13 @@ module.exports = {
 
         const star = client.emojis.cache.get(Emoji.starLevel)
 
-        
-
         if (message.author.bot === false) {
             const ServerLevel = await Levels.find({
                 GuildId: message.guild.id,
                 UserId: message.author.id
             })
             
-            if (ServerLevel[0].Active == "on") {
+            if (ServerLevel.Active == "on") {
                 if (!ServerLevel) {
 
                     await Levels.create({
@@ -30,18 +28,18 @@ module.exports = {
 
                 } else {
                     const randomxp = Math.floor(Math.random() * 5) + 1
-                    const levelup = 5 * (ServerLevel[0].Level ** 2) + 100 * ServerLevel[0].Level + 100
+                    const levelup = 5 * (ServerLevel.Level ** 2) + 100 * ServerLevel.Level + 100
 
                     if ((ServerLevel[0].XP + randomxp) >= levelup) {
-                        await Levels.updateOne({UserId: message.author.id}, {XP: 0, Level: parseInt(ServerLevel[0].Level + 1)})
+                        await Levels.updateOne({UserId: message.author.id}, {XP: 0, Level: parseInt(ServerLevel.Level + 1)})
                         const embed = new EmbedBuilder()
                             .setColor(Config.color.CELE)
-                            .setDescription(`<@${message.author.id}> Level Up **${ServerLevel[0].Level + 1} ${star} **`)
+                            .setDescription(`<@${message.author.id}> Level Up **${ServerLevel.Level + 1} ${star} **`)
                         message.channel.send({
                             embeds: [embed]
                         });
                     } else {
-                        await Levels.updateOne({UserId: message.author.id}, {XP: ServerLevel[0].XP + randomxp})
+                        await Levels.updateOne({UserId: message.author.id}, {XP: ServerLevel.XP + randomxp})
                     }
                 }
             }
