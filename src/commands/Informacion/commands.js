@@ -19,17 +19,18 @@ const builder = new SlashCommandBuilder()
             })
             .setRequired(true)
             .addChoices(
-                { name: 'Config', value: 'config' },
+                { name: 'Settings', value: 'config' },
                 { name: 'Fun', value: 'fun' },
                 { name: 'Economy', value: 'econ' },
                 { name: 'Information', value: 'info' },
                 { name: 'Interacctions', value: 'inte' },
-                { name: 'Mining', value: 'mine' },
+                { name: 'Moderation', value: 'mod' },
+                //{ name: 'Mining', value: 'mine' },
                 { name: 'Music', value: 'music' },
                 { name: 'Levels', value: 'level' },
                 { name: 'Setup', value: 'setup' },
                 { name: 'Giveaway', value: 'give' },
-                { name: 'Moderation', value: 'mod' },))
+                ))
 
 module.exports = {
     builder: builder.toJSON(),

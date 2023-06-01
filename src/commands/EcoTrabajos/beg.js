@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder, PermissionsBitField } = require("discord.js");
-const Config = require('./../../..//config.json');
+const Config = require('../../../config.json');
 const UserEconomy = require('../../models/usereconomy');
 const ServerEconomy = require('../../models/servereconomy');
 const used = new Map();
