@@ -398,7 +398,7 @@
 		"autoplay-off": "✅ | Autoplay está desactivado ahora",
 		"back-yes": "Reproduciendo **{queue} {song}**",
 		"back-no": "⚠️ | No hay canción anterior",
-		"now-playing": "> Audio `%{queue}`\n> Duracion: `{dura}`\n> URL: **{url}**\n> Por: <@${user}>",
+		"now-playing": "> Audio `%{queue}`\n> Duracion: `{dura}`\n> URL: **{url}**\n> Por: <@{user}>",
 		"now-save": "Guardar lista de reproducción",
 		"pause": "**{name}** - Música en pausa",
 		"not-song": "⚠️ | No se encontraron resultados",
@@ -459,6 +459,17 @@
 	},
 	"logs": {
 		"on": " | Sistema de Logs Activado.",
-		"off": " | Sistema de Logs Desactivado."
+		"off": " | Sistema de Logs Desactivado.",
+		"title": "💾 | Sistema de Logs | 💾",
+		"channelcreate": "Se creo un nuevo canal <#{channel}>",
+		"channeldelete": "Se elimino el canal #{channel}",
+		"channelUpdate": "Se edito el canal <#{oldChannel}>\n\n**Antes**\n{name}\n\n**Ahora**\n{newChannel}",
+		"banuser": "Se baneo a <@{user}>",
+		"unbanuser": "Se desbaneo a <@{user}>",
+		"messagedelete": "Se elimino un mensaje de <@{author}> en <#{channel}>\n\n**Contenido:**\n{content}",
+		"messageupdate": "Mensaje editado por <@{author}>\n\n**Antes**\n{oldMessage}\n\n**Ahora**\n{newMessage}",
+		"rolecreate": "Se creo un nuevo rol <@{id}>",
+		"roledelete": "Se elimino el rol @{name}",
+		"roleupdate": "Se edito el rol <@{old}>\n\n**Antes**\n{name}\n\n**Ahora**\n{newRole}"
 	}
 }

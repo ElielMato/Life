@@ -460,7 +460,18 @@
 		"finish": " | Your new reminder will be <t:{time}:R>"
 	},
 	"logs": {
-		"on": "| Logs System Enable.",
-		"off": " | Logs System Disable."
+		"on": " | Logging System Enabled.",
+		"off": " | Logging System Disabled.",
+		"title": "💾 | Logs System | 💾",
+		"channelcreate": "A new channel <#{channel}> is created",
+		"channeldelete": "Delete channel #{channel}",
+		"channelUpdate": "Editing channel <#{oldChannel}>\n\n**Before**\n{name}\n\n**Now**\n{newChannel}",
+		"banuser": "I ban <@{user}>",
+		"unbanuser": "I unban <@{user}>",
+		"messagedelete": "I delete a message from <@{author}> in <#{channel}>\n\n**Content:**\n{content}",
+		"messageupdate": "Message edited by <@{author}>\n\n**Before**\n{oldMessage}\n\n**Now**\n{newMessage}",
+		"rolecreate": "A new role <@{id}> is created",
+		"roledelete": "Deleting role @{name}",
+		"roleupdate": "Editing role <@{old}>\n\n**Before**\n{name}\n\n**Now**\n{newRole}"
 	}
 }
