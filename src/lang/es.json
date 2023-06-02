@@ -455,7 +455,8 @@
 	},
 	"reminder": {
 		"not": "⚠️ | Ya tienes una recordatorio activo",
-		"finish": " | Tu nuevo recordatorio estara en <t:{time}:R>"
+		"finish": " | Tu nuevo recordatorio estara en <t:{time}:R>",
+		"title": "⏰ | Recordatorio | ⏰"
 	},
 	"logs": {
 		"on": " | Sistema de Logs Activado.",

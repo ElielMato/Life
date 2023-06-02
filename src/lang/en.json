@@ -457,7 +457,8 @@
 	},
 	"reminder": {
 		"not": "⚠️ | You already have an active reminder",
-		"finish": " | Your new reminder will be <t:{time}:R>"
+		"finish": " | Your new reminder will be <t:{time}:R>",
+		"title": "⏰ | Reminder | ⏰"
 	},
 	"logs": {
 		"on": " | Logging System Enabled.",
