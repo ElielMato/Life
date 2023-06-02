@@ -1,34 +1,4 @@
-const { Client, GatewayIntentBits, Partials, Collection, EmbedBuilder, ActivityType, ShardingManager } = require("discord.js")
-const client = new Client({
-    intents: [
-        GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildBans,
-        GatewayIntentBits.GuildIntegrations,
-        GatewayIntentBits.GuildWebhooks,
-        GatewayIntentBits.GuildInvites,
-        GatewayIntentBits.GuildVoiceStates,
-        GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.MessageContent,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.DirectMessages,
-        GatewayIntentBits.DirectMessageReactions,
-        GatewayIntentBits.GuildScheduledEvents,
-        GatewayIntentBits.GuildEmojisAndStickers,
-    ],
-    partials: [
-        Partials.User,
-        Partials.Message,
-        Partials.Channel,
-        Partials.Reaction,
-        Partials.GuildMember,
-        Partials.GuildScheduledEvent,
-        Partials.ThreadMember,
-    ],
-
-})
-const fs = require('fs')
+const { ShardingManager } = require("discord.js")
 require('dotenv').config()
 
 const manager = new ShardingManager('./bot.js', {

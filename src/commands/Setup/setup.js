@@ -3,12 +3,14 @@ const {
     EmbedBuilder,
     PermissionsBitField,
     StringSelectMenuBuilder,
-    ActionRowBuilder
+    ActionRowBuilder,
+    ChannelType
 } = require("discord.js");
 const Config = require('../../../config.json');
 const ServerEconomy = require('../../models/servereconomy');
 const Emoji = require('../../json/emoji.json')
-const Welcome = require('../../models/welcome')
+const Logs = require('../../models/logs.schema')
+const Activate = require('../../functions/Logs/Activate')
 
 const builder = new SlashCommandBuilder()
     .setName('setup')	
@@ -131,6 +133,59 @@ const builder = new SlashCommandBuilder()
             "es-ES": "Activas/Desactivar el sistema de niveles",
             "en-US": "Enable/Disable the levels system"
         }))
+    .addSubcommand(subcommand =>
+        subcommand
+        .setName('logs')
+        .setDescription('Controla y modifica el sistema de logs')
+        .setDescriptionLocalizations({
+            "es-ES": "Controla y modifica el sistema de logs",
+            "en-US": "Control and modify the log system"
+        })
+        .addStringOption(option => option
+            .setName('opcion')
+            .setNameLocalizations({
+                "es-ES": "opcion",
+                "en-US": "option"
+            })
+            .setDescription('Elige una opcion')
+            .setDescriptionLocalizations({
+                "es-ES": "Elige una opcion",
+                "en-US": "Choose the options"
+            })
+            .setRequired(true)
+            .addChoices(
+                { name: 'EditMessage', value: 'EditMessage' },
+                { name: 'DeleteMessage', value: 'DeleteMessage' },
+                { name: 'CreateChannel', value: 'CreateChannel' },
+                { name: 'EditChannel', value: 'EditChannel' },
+                { name: 'DeleteChannel', value: 'DeleteChannel' },
+                { name: 'BanUser', value: 'BanUser' },
+                { name: 'UnbanUser', value: 'UnbanUser' },
+                { name: 'CreateRole', value: 'CreateRole' },
+                { name: 'EditRole', value: 'EditRole' },
+                { name: 'DeleteRole', value: 'DeleteRole' }))
+        .addStringOption(option => option
+            .setName('activate')
+            .setNameLocalizations({
+                "es-ES": "activar",
+                "en-US": "activate"
+            })
+            .setDescription('Activa/Desactiva el sistema de logs')
+            .setDescriptionLocalizations({
+                "es-ES": "Activas/Desactivar el sistema de logs",
+                "en-US": "Enable/Disable the logs system"
+            })
+            .setRequired(true)
+            .addChoices(
+                { name: 'Off', value: 'off' },
+                { name: 'On', value: 'on' }))
+        .addChannelOption(option => option
+            .setName('channel')
+            .setDescription('Elige el canal.')
+            .addChannelTypes(ChannelType.GuildText)
+            .setRequired(true)))
+        
+        
     // .addSubcommand(subcommand =>
     //     subcommand
     //     .setName('twitch')
@@ -146,7 +201,7 @@ module.exports = {
     async run(client, interaction, language) {
 
         const star = client.emojis.cache.get(Emoji.starLevel)
-        const twitch = client.emojis.cache.get(Emoji.twitch)
+        //const twitch = client.emojis.cache.get(Emoji.twitch)
 
         var permisos = interaction.member.permissions.has(PermissionsBitField.Flags.Administrator);
         const embedPerms = new EmbedBuilder()
@@ -525,7 +580,70 @@ module.exports = {
                     embeds: [embed],
                     components: [row],
                 })
-            } //else if (interaction.options.getSubcommand() === "twitch") {
+            } else if (interaction.options.getSubcommand() === "logs") {
+
+                const option = interaction.options._hoistedOptions[0].value;
+                const active = interaction.options._hoistedOptions[1].value;
+                const channel = interaction.options._hoistedOptions[2].value;
+                const check = client.emojis.cache.get(Emoji.check)
+                const cross = client.emojis.cache.get(Emoji.cross)
+
+                const GuildLogs = await Logs.findOne({ GuildId: interaction.guild.id})
+                let Guild = ""
+
+                if(!GuildLogs){
+                    Guild = await Logs.create({ GuildId: interaction.guild.id })
+                } 
+                await Guild.save;
+
+                const embed = new EmbedBuilder()
+                    .setDescription(`${check}`  + client.languages.__({phrase: 'logs.on', locale: language}))
+                    .setColor(Config.color.GOOD)
+
+                const embedError = new EmbedBuilder()
+                    .setDescription(`${cross}`  + client.languages.__({phrase: 'logs.off', locale: language}))
+                    .setColor(Config.color.BAD)
+
+
+                switch (option) {
+                    case "EditMessage":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "DeleteMessage":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "CreateChannel":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "EditChannel":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "DeleteChannel":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "BanUser":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "UnbanUser":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "CreateRole":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "EditRole":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                    case "DeleteRole":
+                        Activate(active, interaction, option, channel, client, embed, embedError)
+                        break;
+                }
+            } 
+            
+            
+            
+            
+            
+            //else if (interaction.options.getSubcommand() === "twitch") {
             //     const Twitch = require('../../models/twitch')
             //     const twitchModel = await Twitch.findOne({ GuildId: interaction.guild.id})
             //     if (!twitchModel) return await Twitch.create({
@@ -568,3 +686,4 @@ module.exports = {
         
     }
 }
+

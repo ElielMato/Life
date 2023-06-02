@@ -458,5 +458,9 @@
 	"reminder": {
 		"not": "⚠️ | You already have an active reminder",
 		"finish": " | Your new reminder will be <t:{time}:R>"
+	},
+	"logs": {
+		"on": "| Logs System Enable.",
+		"off": " | Logs System Disable."
 	}
 }

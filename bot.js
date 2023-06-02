@@ -4,14 +4,13 @@ const {
 	Partials,
 	Collection,
 	EmbedBuilder,
-	ActivityType,
-	ShardingManager
+	ActivityType
 } = require("discord.js")
 const client = new Client({
 	intents: [
 		GatewayIntentBits.Guilds,
 		GatewayIntentBits.GuildMembers,
-		GatewayIntentBits.GuildBans,
+		GatewayIntentBits.GuildModeration,
 		GatewayIntentBits.GuildIntegrations,
 		GatewayIntentBits.GuildWebhooks,
 		GatewayIntentBits.GuildInvites,
@@ -169,7 +168,5 @@ setInterval(async () => {
 		});
 	};
 }, 1000 * 5)
-
-
 
 client.login(process.env.TOKEN)

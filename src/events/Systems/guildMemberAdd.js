@@ -10,7 +10,6 @@ module.exports = {
                 GuildId: interaction.guild.id
             });
             if (welcome.Active = "on") {
-
                 if (welcome.Title != "" && welcome.Descriptions != "") {
                     if(welcome.RoleId != ""){
 
