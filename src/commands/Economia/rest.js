@@ -82,7 +82,19 @@ module.exports = {
                 GuildId: interaction.guild.id
             })
 
-            
+            const Server = "";
+            const User = "";
+
+            if (!economiaServer){
+                Server = await ServerEconomy.create({ GuildId: interaction.guild.id })
+            }
+
+            if (!economiaSujeto) {
+                User = await UserEconomy.create({ GuildId: interaction.guild.id, MemberId: usuario.id })
+            }
+
+            await Server.save
+            await User.save
 
             if (economiaServer && economiaSujeto) {
 
@@ -107,28 +119,7 @@ module.exports = {
                 }
                 
             } 
-            if (!economiaServer){
-                ServerEconomy.create({
-                    GuildId: interaction.guild.id
-                })
-
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
-            }
-            if (!economiaSujeto) {
-
-                UserEconomy.create({
-                    GuildId: interaction.guild.id,
-                    MemberId: usuario.id
-                })
-
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
-            }
+            
 
         } catch (error) {
             console.log("Error en SlashCommand:" + error);

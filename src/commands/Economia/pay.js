@@ -64,40 +64,25 @@ module.exports = {
                 GuildId: interaction.guild.id
             })
 
+            const Server = "";
+            const User = "";
+            let Sujeto = "";
+
             if (!economiaServer){
-                ServerEconomy.create({
-                    GuildId: interaction.guild.id
-                })
-
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
+                Server = await ServerEconomy.create({ GuildId: interaction.guild.id })
             }
-            if (!economiaUser) {
 
-                UserEconomy.create({
-                    GuildId: interaction.guild.id,
-                    MemberId: interaction.user.id
-                })
-
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
+            if (!economiaUser){
+                User = UserEconomy.create({ GuildId: interaction.guild.id, MemberId: interaction.user.id })
             }
-            if (!economiaSujeto){
-                
-                UserEconomy.create({
-                    GuildId: interaction.guild.id,
-                    MemberId: usuario.id
-                })
 
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
+            if (!economiaSujeto) {
+                Sujeto = await UserEconomy.create({ GuildId: interaction.guild.id, MemberId: usuario.id })
             }
+
+            await Server.save
+            await User.save
+            await Sujeto.save
             
             if (economiaUser && economiaServer && economiaSujeto) {
 

@@ -48,57 +48,48 @@ module.exports = {
             GuildId: interaction.guild.id
         })
 
+        let Server = "";
+        let User = "";
+
         if (!economiaServer){
-            ServerEconomy.create({
-                GuildId: interaction.guild.id
-            })
-
-            const embed = new EmbedBuilder()
-                .setColor(Config.color.CELE)
-                .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-            interaction.reply({embeds: [embed]})
+            Server = await ServerEconomy.create({ GuildId: interaction.guild.id })
         }
+
         if (!economiaUser) {
-
-            UserEconomy.create({
-                GuildId: interaction.guild.id,
-                MemberId: interaction.user.id
-            })
-
-            const embed = new EmbedBuilder()
-                .setColor(Config.color.CELE)
-                .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-            interaction.reply({embeds: [embed]})
+            User = await UserEconomy.create({ GuildId: interaction.guild.id, MemberId: interaction.user.id })
         }
+
+        await Server.save
+        await User.save
 
         if (economiaUser && economiaServer) {
-        const max = economiaServer.Max.Postmeme
-        const min = economiaServer.Min.Postmeme
-        let profits = Math.floor(Math.random() * (max - min))
-        let probabilidad = Math.floor(Math.random() * 100)
-        let mensajes = ['Instragram', 'Facebook', 'Youtube', 'TikTok', 'Twitch']
-        let msg = mensajes[Math.floor(Math.random() * mensajes.length)]
-        let likes = Math.floor(Math.random() * (1000 - 800) + 200)
-        const won = economiaUser.Cash + profits
-        const emoji = economiaServer.Emoji
+            const max = economiaServer.Max.Postmeme
+            const min = economiaServer.Min.Postmeme
+            let profits = Math.floor(Math.random() * (max - min))
+            let probabilidad = Math.floor(Math.random() * 100)
+            let mensajes = ['Instragram', 'Facebook', 'Youtube', 'TikTok', 'Twitch']
+            let msg = mensajes[Math.floor(Math.random() * mensajes.length)]
+            let likes = Math.floor(Math.random() * (1000 - 800) + 200)
+            const won = economiaUser.Cash + profits
+            const emoji = economiaServer.Emoji
 
-        if (probabilidad > 40) {
-            const embed = new EmbedBuilder()
-                .setDescription(client.languages.__mf({phrase: 'postvideo.video-yes', locale: language}, {msg: msg, likes: likes,profits: profits, emoji: emoji}))
-                .setColor(Config.color.CELE)
-            interaction.reply({embeds: [embed]})
-            await UserEconomy.updateOne({MemberId: interaction.user.id}, {Cash: won})
-        } else if (probabilidad > 30) {
-            const noembed = new EmbedBuilder()
-                .setDescription(client.languages.__mf({phrase: 'postvideo.video-no', locale: language}, {msg: msg}))
-                .setColor(Config.color.CELE)
-            interaction.reply({embed: [noembed]})
-        }
-        
+            if (probabilidad > 40) {
+                const embed = new EmbedBuilder()
+                    .setDescription(client.languages.__mf({phrase: 'postvideo.video-yes', locale: language}, {msg: msg, likes: likes,profits: profits, emoji: emoji}))
+                    .setColor(Config.color.CELE)
+                interaction.reply({embeds: [embed]})
+                await UserEconomy.updateOne({MemberId: interaction.user.id}, {Cash: won})
+            } else {
+                const noembed = new EmbedBuilder()
+                    .setDescription(client.languages.__mf({phrase: 'postvideo.video-no', locale: language}, {msg: msg}))
+                    .setColor(Config.color.CELE)
+                interaction.reply({embed: [noembed]})
+            }
+            
 
-        const tiempo = economiaServer.Cooldown.Postvideo
-        used.set(user, Date.now() + tiempo);
-        setTimeout(() => used.delete(user), tiempo);
+            const tiempo = economiaServer.Cooldown.Postvideo
+            used.set(user, Date.now() + tiempo);
+            setTimeout(() => used.delete(user), tiempo);
         } 
     }
 }

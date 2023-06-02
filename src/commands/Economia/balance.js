@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { EmbedBuilder, PermissionsBitField } = require("discord.js");
 const Config = require('./../../..//config.json');
-//Definismos los Models que utilizaremos
 const UserEconomy = require('../../models/usereconomy');
 const ServerEconomy = require('../../models/servereconomy');
 
@@ -20,8 +19,7 @@ module.exports = {
 
     try {
 
-        const user = interaction.user
-
+        const user = interaction.user;
 
         const economiaUser = await UserEconomy.findOne({
             GuildId: interaction.guild.id,
@@ -32,27 +30,20 @@ module.exports = {
             GuildId: interaction.guild.id
         })
 
+        let Server = "";
+        let User = "";
+
         if (!economiaServer){
-            ServerEconomy.create({
-                GuildId: interaction.guild.id
-            })
-
-            const embed = new EmbedBuilder()
-                .setColor(Config.color.CELE)
-                .setDescription(client.languages.__({phrase: 'general.economy-create', locale: language}))
-            interaction.reply({embeds: [embed]})
+            Server = await ServerEconomy.create({ GuildId: interaction.guild.id })
         }
+
         if (!economiaUser) {
-            UserEconomy.create({
-                GuildId: interaction.guild.id,
-                MemberId: interaction.user.id
-            })
-            const embed = new EmbedBuilder()
-                .setColor(Config.color.CELE)
-                .setDescription(client.languages.__({phrase: 'general.economy-create', locale: language}))
-            interaction.reply({embeds: [embed]})
+            User = await UserEconomy.create({ GuildId: interaction.guild.id, MemberId: interaction.user.id })
         }
 
+        await Server.save
+        await User.save
+    
         if (economiaUser && economiaServer) {
             let cash = economiaUser.Cash
             let bank = economiaUser.Bank

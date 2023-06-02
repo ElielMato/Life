@@ -33,28 +33,19 @@ module.exports = {
                 GuildId: interaction.guild.id
             })
 
-             if (!economiaServer){
-                ServerEconomy.create({
-                    GuildId: interaction.guild.id
-                })
+            const Server = "";
+            const User = "";
 
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
+            if (!economiaServer){
+                Server = await ServerEconomy.create({ GuildId: interaction.guild.id })
             }
+
             if (!economiaUser) {
-
-                UserEconomy.create({
-                    GuildId: interaction.guild.id,
-                    MemberId: interaction.user.id
-                })
-
-                const embed = new EmbedBuilder()
-                    .setColor(Config.color.CELE)
-                    .setDescription(client.languages.__({phrase: "general.economy-create", locale: language}))
-                interaction.reply({embeds: [embed]})
+                User = await UserEconomy.create({ GuildId: interaction.guild.id, MemberId: interaction.user.id })
             }
+
+            await Server.save
+            await User.save
 
             if (economiaUser && economiaServer) {
                 let random = Math.floor(Math.random() * (200 - 100) + 100)
