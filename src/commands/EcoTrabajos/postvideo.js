@@ -77,8 +77,8 @@ module.exports = {
                 const embed = new EmbedBuilder()
                     .setDescription(client.languages.__mf({phrase: 'postvideo.video-yes', locale: language}, {msg: msg, likes: likes,profits: profits, emoji: emoji}))
                     .setColor(Config.color.CELE)
-                interaction.reply({embeds: [embed]})
                 await UserEconomy.updateOne({MemberId: interaction.user.id}, {Cash: won})
+                interaction.reply({embeds: [embed]})
             } else {
                 const noembed = new EmbedBuilder()
                     .setDescription(client.languages.__mf({phrase: 'postvideo.video-no', locale: language}, {msg: msg}))
