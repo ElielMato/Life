@@ -59,8 +59,5 @@ module.exports = {
         } catch (error) {
             console.log("Error en SlashCommand:" + error);
         }
-
-        
-
     }
 }
