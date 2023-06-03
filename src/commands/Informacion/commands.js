@@ -24,6 +24,7 @@ const builder = new SlashCommandBuilder()
                 { name: 'Economy', value: 'econ' },
                 { name: 'Information', value: 'info' },
                 { name: 'Interacctions', value: 'inte' },
+                { name: 'Actions', value: 'act' },
                 { name: 'Moderation', value: 'mod' },
                 //{ name: 'Mining', value: 'mine' },
                 { name: 'Music', value: 'music' },
@@ -158,15 +159,15 @@ module.exports = {
                 ephemeral: true
             })
 
-        } else if (command == "mod") {
+        }  else if (command == "act") {
 
-            const modera = new EmbedBuilder()
-                .setTitle(client.languages.__({phrase: 'commands.title-moderation', locale: language}))
-                .setDescription(client.languages.__({phrase: 'commands.desc-mod', locale: language}))
+            const action = new EmbedBuilder()
+                .setTitle(client.languages.__({phrase: 'commands.title-action', locale: language}))
+                .setDescription(client.languages.__({phrase: 'commands.desc-act', locale: language}))
                 .setColor(Config.color.CELE)
 
             interaction.reply({
-                embeds: [modera],
+                embeds: [action],
                 ephemeral: true
             })
 
