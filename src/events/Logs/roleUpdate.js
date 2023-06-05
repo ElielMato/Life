@@ -14,6 +14,11 @@ module.exports = {
         await Guild.save;
 
         const locale = await Guilds.findOne({ guildId: oldRole.guild.id })
+        let Lang = ""
+        if(!locale){
+            Lang = await Guilds.create({ guildId: role.guild.id })
+        } 
+        await Lang.save;
         const language = locale.lang
         const channel = oldRole.client.channels.cache.get(`${GuildLogs.EditRole.ChannelId}`)
 

@@ -14,6 +14,11 @@ module.exports = {
         await Guild.save;
         
         const locale = await Guilds.findOne({ guildId: channel.guildId })
+        let Lang = ""
+        if(!locale){
+            Lang = await Guilds.create({ guildId: channel.guildId })
+        } 
+        await Lang.save;
         const language = locale.lang
         const channelSend = client.channels.cache.get(`${GuildLogs.DeleteChannel.ChannelId}`)
 
