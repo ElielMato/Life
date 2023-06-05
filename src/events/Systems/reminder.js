@@ -1,13 +1,13 @@
 const { EmbedBuilder } = require("discord.js");
 const Config = require('../../../config.json');
 const reminderSchema = require('../../models/reminder.schema.js')
-const Guild = require('../../models/guilds')
+const Guilds = require('../../models/guilds')
 
 module.exports = {
     name: 'interactionCreate',
     async execute(interaction, client) {
 
-        const locale = await Guild.findOne({ guildId: interaction.guild.id })
+        const locale = await Guilds.findOne({ guildId: interaction.guild.id })
         const language = locale.lang
         setInterval(async () => {
             const reminders = await reminderSchema.find();

@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js')
 const Logs = require('../../models/logs.schema')
-const Guild = require('../../models/guilds')
+const Guilds = require('../../models/guilds')
 const Config = require('../../../config.json')
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
         } 
         await Guild.save;
 
-        const locale = await Guild.findOne({ guildId: message.guildId })
+        const locale = await Guilds.findOne({ guildId: message.guildId })
         const language = locale.lang
         const channel = client.channels.cache.get(`${GuildLogs.DeleteMessage.ChannelId}`)
 

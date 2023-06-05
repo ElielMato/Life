@@ -1,6 +1,6 @@
 const { EmbedBuilder } = require('discord.js')
 const Logs = require('../../models/logs.schema')
-const Guild = require('../../models/guilds')
+const Guilds = require('../../models/guilds')
 const Config = require('../../../config.json')
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
         } 
         await Guild.save;
 
-        const locale = await Guild.findOne({ guildId: ban.guild.id })
+        const locale = await Guilds.findOne({ guildId: ban.guild.id })
         const language = locale.lang
         const channelSend = client.channels.cache.get(`${GuildLogs.UnbanUser.ChannelId}`)
 
