@@ -7,6 +7,12 @@ module.exports = {
     name: 'roleDelete',
     async execute(role, client) {
         const GuildLogs = await Logs.findOne({ GuildId: role.guild.id})
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: role.guild.id })
+        } 
+        await Guild.save;
+        
         const locale = await Guild.findOne({ guildId: role.guild.id })
         const language = locale.lang
         const channelSend = client.channels.cache.get(`${GuildLogs.DeleteRole.ChannelId}`)

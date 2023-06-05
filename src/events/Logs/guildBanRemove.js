@@ -7,6 +7,12 @@ module.exports = {
     name: 'guildBanRemove',
     async execute(ban, client) {
         const GuildLogs = await Logs.findOne({ GuildId: ban.guild.id})
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: ban.guild.id })
+        } 
+        await Guild.save;
+
         const locale = await Guild.findOne({ guildId: ban.guild.id })
         const language = locale.lang
         const channelSend = client.channels.cache.get(`${GuildLogs.BanUser.ChannelId}`)

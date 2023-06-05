@@ -7,6 +7,12 @@ module.exports = {
     name: 'channelCreate',
     async execute(channel, client) {
         const GuildLogs = await Logs.findOne({ GuildId: channel.guildId})
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: channel.guildId })
+        } 
+        await Guild.save;
+        
         const locale = await Guild.findOne({ guildId: channel.guildId })
         const language = locale.lang
         const channelSend = client.channels.cache.get(`${GuildLogs.CreateChannel.ChannelId}`)

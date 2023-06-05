@@ -8,6 +8,12 @@ module.exports = {
     name: 'messageUpdate',
     async execute(oldMessage, newMessage, client) {
         const GuildLogs = await Logs.findOne({ GuildId: oldMessage.guild.id})
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: oldMessage.guild.id })
+        } 
+        await Guild.save;
+
         const locale = await Guild.findOne({ guildId: oldMessage.guild.id })
         const language = locale.lang
         const channel = client.channels.cache.get(`${GuildLogs.EditMessage.ChannelId}`)

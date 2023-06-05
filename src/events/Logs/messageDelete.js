@@ -7,6 +7,12 @@ module.exports = {
     name: 'messageDelete',
     async execute(message, client) {
         const GuildLogs = await Logs.findOne({ GuildId: message.guildId })
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: message.guild.id })
+        } 
+        await Guild.save;
+
         const locale = await Guild.findOne({ guildId: message.guildId })
         const language = locale.lang
         const channel = client.channels.cache.get(`${GuildLogs.DeleteMessage.ChannelId}`)

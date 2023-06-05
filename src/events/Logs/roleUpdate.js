@@ -7,6 +7,12 @@ module.exports = {
     name: 'roleUpdate',
     async execute(oldRole, newRole) {
         const GuildLogs = await Logs.findOne({ GuildId: oldRole.guild.id })
+        let Guild = ""
+        if(!GuildLogs){
+            Guild = await Logs.create({ GuildId: oldRole.guild.id })
+        } 
+        await Guild.save;
+
         const locale = await Guild.findOne({ guildId: oldRole.guild.id })
         const language = locale.lang
         const channel = oldRole.client.channels.cache.get(`${GuildLogs.EditRole.ChannelId}`)
