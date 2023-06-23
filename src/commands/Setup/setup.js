@@ -638,11 +638,6 @@ module.exports = {
                         break;
                 }
             } 
-            
-            
-            
-            
-            
             //else if (interaction.options.getSubcommand() === "twitch") {
             //     const Twitch = require('../../models/twitch')
             //     const twitchModel = await Twitch.findOne({ GuildId: interaction.guild.id})

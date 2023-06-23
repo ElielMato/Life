@@ -17,7 +17,7 @@ module.exports = {
         const locale = await Guilds.findOne({ guildId: oldMessage.guild.id })
         let Lang = ""
         if(!locale){
-            Lang = await Guilds.create({ guildId: message.guildId })
+            Lang = await Guilds.create({ guildId: oldMessage.guild.id })
         } 
         await Lang.save;
         const language = locale.lang
